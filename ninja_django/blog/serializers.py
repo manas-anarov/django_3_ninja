@@ -21,3 +21,13 @@ class AddSerializer(ModelSerializer):
 			'title',
 			'text',
 		]
+
+
+class ShowSerializer(ModelSerializer):
+	class Meta:
+		model = Post
+		fields = [
+			'id',
+			'title',
+			'text',
+		]
