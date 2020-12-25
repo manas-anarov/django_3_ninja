@@ -12,3 +12,12 @@ class ListSerializer(ModelSerializer):
 			'title',
 			'text',
 		]
+
+
+class AddSerializer(ModelSerializer):
+	class Meta:
+		model = Post
+		fields = [
+			'title',
+			'text',
+		]
