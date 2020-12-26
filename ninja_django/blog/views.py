@@ -2,12 +2,14 @@ from .serializers import (
 	ListSerializer,
 	AddSerializer,
 	ShowSerializer,
+	DeleteSerializer,
 )
 
 from rest_framework.generics import (
 	ListAPIView,
 	CreateAPIView,
 	RetrieveAPIView,
+	DestroyAPIView,
 )
 
 from blog.models import Post
@@ -26,4 +28,10 @@ class AddPost(CreateAPIView):
 class ShowPost(RetrieveAPIView):
 	queryset = Post.objects.all()
 	serializer_class = ShowSerializer
+	lookup_field = 'id'
+
+
+class DeletePost(DestroyAPIView):
+	queryset = Post.objects.all()
+	serializer_class = DeleteSerializer
 	lookup_field = 'id'

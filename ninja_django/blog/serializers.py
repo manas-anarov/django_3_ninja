@@ -31,3 +31,8 @@ class ShowSerializer(ModelSerializer):
 			'title',
 			'text',
 		]
+
+
+class DeleteSerializer(ModelSerializer):
+	class Meta:
+		model = Post
